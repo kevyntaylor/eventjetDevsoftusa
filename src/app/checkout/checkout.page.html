@@ -1,0 +1,31 @@
+<ion-header [translucent]="true">
+  <app-menu-principal></app-menu-principal>
+</ion-header>
+
+<ion-content>
+  <div class="container">
+    <ion-card class="welcome-card" style="margin-top: 1%;margin-bottom: auto;">
+      <ion-img src="/assets/stripe.png"></ion-img>
+      <ion-card-header>
+        <ion-card-subtitle>Checkout</ion-card-subtitle>
+        <ion-card-title>Pay with Stripe</ion-card-title>
+        <ion-row>
+          <ion-col>Total Payment</ion-col>
+          <ion-col>$ {{valorpago}} </ion-col>
+        </ion-row>
+      </ion-card-header>
+      <ion-card-content>
+        <form action="/" method="post" id="payment-form">
+          <div class="form-row">
+            <div id="card-element" style="margin: 2%;">
+              <!-- a Stripe Element will be inserted here. -->
+            </div>
+            <!-- Used to display Element errors -->
+            <div id="card-errors" role="alert"></div>
+          </div>
+          <ion-button type="submit" color="success" expand="full">Make Payment</ion-button>
+        </form>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

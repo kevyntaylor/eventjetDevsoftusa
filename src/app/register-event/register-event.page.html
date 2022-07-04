@@ -1,0 +1,117 @@
+<ion-header [translucent]="true">
+  <app-menu-principal></app-menu-principal>
+</ion-header>
+<ion-content>
+  <div class="container register">
+    <div class="row">
+        <div class="col-md-3 register-left">
+            <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/>
+            <h3>The EventJet</h3>
+        </div>
+        <div class="col-md-9 register-right">
+            <!--<ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="home-tab" data-toggle="tab" (click)="TipoClient(1)" role="tab" aria-controls="home" aria-selected="true">Clients</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="profile-tab" data-toggle="tab" (click)="TipoClient(2)" role="tab" aria-controls="profile" aria-selected="false">Seller</a>
+                </li>
+            </ul>-->
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                    <h3 class="register-heading">Create Events</h3>
+                    <div class="row register-form">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <span>main image</span>
+                                <input type="file" (change)="onFileChanged($event)" class="form-control"/>
+                            </div>
+                            <div class="form-group">
+                              <span>banner image</span>
+                              <input type="file" (change)="onFileChangedBaner($event)" class="form-control"/>
+                            </div>
+                            <div class="form-group">
+                              <span>Title</span>
+                                <input type="text" class="form-control" [(ngModel)]="title"   placeholder="Title Event *" value="" />
+                            </div>
+                            <div class="form-group">
+                              <span>Description</span>
+                                <textarea class="form-control" [(ngModel)]="description"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                              <span>Address</span>
+                                <input type="text" class="form-control" [(ngModel)]="address"   placeholder="Address Event *" value="" />
+                                <!--<input type="file" class="form-control" (change)="onFileChanged($event)" />-->
+                            </div>
+                           
+                            <div class="form-group">
+                              <span>Coords Latitude For Maps</span>
+                              <input type="text" class="form-control" [(ngModel)]="latitud"   placeholder="Latitude (optional)" value="" />
+                            </div>
+                            <div class="form-group">
+                              <span>Coords Longitude For Maps</span>
+                              <input type="text" class="form-control" [(ngModel)]="longitud"   placeholder="Longitude (optional)" value="" />
+                            </div>
+                            <div class="form-group">
+                              <span>Date Event</span>
+                              <input type="datetime-local" class="form-control" [(ngModel)]="dateEvent"  placeholder="Date Event *" value="" />
+                            </div>
+                            <div class="form-group">
+                              <span>Type Event</span>
+                              <select class="form-control" (change)="onTypeEvent($event)">
+                                <option value="1">Music</option>
+                                <option value="2">Art</option>
+                                <option value="3">Teatre</option>
+                                <option value="4">Comedy</option>
+                                <option value="5">Sport</option>
+                                <option value="6">Urban</option>
+                                <option value="7">Health</option>
+                                <option value="8">Food & drinks</option>
+                                <option value="9">Animal</option>
+                                <option value="10">Religion</option>
+                              </select>
+                            </div>
+                        </div>
+                        <form [formGroup]="registerForm">
+                          <div class="col-md-12">
+                            <div class="form-group">
+                              <a class="btn btn-danger" style="color: aliceblue;" (click)="agregarBoleta()">Add Ticket</a>
+                            </div>
+                            <div formArrayName="tickets" *ngFor="let ticket of tickets.controls; let i = index">
+                              <div [formGroupName]="i">
+                                <div class="form-group row">
+                                  <label class="col-md-2" [attr.for]="'ticket' + i">Ticket Title</label>
+                                  <div class="col-md-2">
+                                    <input type="text" [attr.id]="'ticket' + i" class="form-control" formControlName="title">
+                                  </div>
+                                  <label class="col-md-2" [attr.for]="'price' + i">Price</label>
+                                  <div class="col-md-2">
+                                    <input type="number" [attr.id]="'price' + i" class="form-control" formControlName="price">
+                                  </div>
+                                  <label class="col-md-2" [attr.for]="'stock' + i">Stock</label>
+                                  <div class="col-md-2">
+                                    <input type="number" [attr.id]="'stock' + i" class="form-control" formControlName="stock">
+                                  </div>
+                                  <div class="col-md-2">
+                                    
+                                    <button class="btn btn-danger" (click)="removerTickets(i)"><ion-icon name="trash-outline"></ion-icon></button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </form>
+                        <div class="col-md-12">
+                          <input type="submit" class="btnRegister" (click)="registrar()"  value="Register Event"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  </div>
+
+</ion-content>

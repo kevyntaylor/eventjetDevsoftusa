@@ -1,20 +1,93 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
+  <app-menu-principal></app-menu-principal>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content [fullscreen]="true" style="background-color: white;">
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <div style="background-color: white;margin-left: 1%;margin-right: 2%;margin-top: 2%;margin-bottom: 0; width: 100%;">
+    <form class="form-inline" style="width: 98%;">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search Events" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
   </div>
+  <div style="background-color: white;margin-top: 1%;width: 100%;">
+    <ion-slides pager="true" [options]="slideOpts">
+      <ion-slide *ngFor="let banner of banners">
+        <img src="https://devsoftusa.com/api/images/{{banner}}" style="height: 15%;width: 98%;">
+      </ion-slide>
+    </ion-slides>
+  </div>
+<!--<h1 style="margin: 2%;color: black;border-bottom: 1px solid black;">Top Events</h1>
+  <div class="card-deck" style="margin-left: 2%;margin-right: 2%;margin-top: 2%;color: black;">
+    <div class="card">
+      <img class="card-img-top" src="https://bevents.co/wp-content/uploads/2020/02/events.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">The Color Run</h5>
+        <p class="card-text">Test Event 1.</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </div>
+    </div>
+    <div class="card">
+      <img class="card-img-top" src="https://img.redbull.com/images/c_crop,x_0,y_0,h_2666,w_3999/c_fill,w_860,h_573/q_auto,f_auto/redbullcom/2015/10/19/f9f6b3c0862a0ca56e92819092969a51/hardline-rider" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Bike Redbull</h5>
+        <p class="card-text">Test Event 2.</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Last updated 1 year ago</small>
+      </div>
+    </div>
+    <div class="card">
+      <img class="card-img-top" src="https://www.edsoforsmartgrids.eu/wp-content/uploads/miguel-henriques-RfiBK6Y_upQ-unsplash-1600x700.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Coach business</h5>
+        <p class="card-text">Test Event 3.</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </div>
+    </div>
+    <div class="card">
+      <img class="card-img-top" src="https://www.edsoforsmartgrids.eu/wp-content/uploads/miguel-henriques-RfiBK6Y_upQ-unsplash-1600x700.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Coach business</h5>
+        <p class="card-text">Test Event 3.</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </div>
+    </div>
+    <div class="card">
+      <img class="card-img-top" src="https://www.edsoforsmartgrids.eu/wp-content/uploads/miguel-henriques-RfiBK6Y_upQ-unsplash-1600x700.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Coach business</h5>
+        <p class="card-text">Test Event 3.</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </div>
+    </div>
+  </div>-->
+  <h1 style="margin: 2%;color: black;border-bottom: 1px solid black;">General Events</h1>
+  <ion-grid>
+    <ion-row>
+      <ion-col *ngFor="let event of events" [ngClass]="{'col-12':isMobile, 'col-3': !isMobile}">
+        <ion-card style="height: 380px;">
+          <img src="https://devsoftusa.com/api/images/{{event.imagen}}" style="width: 100%;" height="200"/>
+          <ion-card-content>
+            <ion-card-title>
+              {{event.nombre}}
+              </ion-card-title>
+            <p>
+             {{event.descripcion}}
+            </p>
+            <br>
+            <div style="text-align: center;"><button class="btn btn-success" (click)="checkout(event)">Buy Tickets</button></div>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

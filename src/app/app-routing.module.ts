@@ -11,6 +11,42 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'register',
+    loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'support',
+    loadChildren: () => import('./support/support.module').then( m => m.SupportPageModule)
+  },
+  {
+    path: 'profile',
+    loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
+  },
+  {
+    path: 'mytickets',
+    loadChildren: () => import('./mytickets/mytickets.module').then( m => m.MyticketsPageModule)
+  },
+  {
+    path: 'register-event',
+    loadChildren: () => import('./register-event/register-event.module').then( m => m.RegisterEventPageModule)
+  },
+  {
+    path: 'registar-event-logout',
+    loadChildren: () => import('./registar-event-logout/registar-event-logout.module').then( m => m.RegistarEventLogoutPageModule)
+  },
+  {
+    path: 'details-event',
+    loadChildren: () => import('./details-event/details-event.module').then( m => m.DetailsEventPageModule)
+  },
+  {
+    path: 'checkout',
+    loadChildren: () => import('./checkout/checkout.module').then( m => m.CheckoutPageModule)
+  },
 ];
 
 @NgModule({

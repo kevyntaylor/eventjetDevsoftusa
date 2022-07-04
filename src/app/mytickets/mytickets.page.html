@@ -1,0 +1,50 @@
+<ion-header>
+  <app-menu-principal></app-menu-principal>
+</ion-header>
+
+<ion-content>
+  <div class="" style="text-align: center; margin: 2%;">
+   <div class="row">
+   
+    <div class="col-md-12">
+      <br>
+      <div class='flip'>
+        <div class='flip__inner'>
+          <div class='ticket'>
+            <div style='padding: 0.1rem 0'></div>
+            <h1 class='ticket__heading' data-text='BacketBall'>Null</h1>
+
+            <div class='ticket__details'>
+              <div class='ticket__detail'>
+                <div>Date</div>
+                <div>null</div>
+              </div>
+
+              <div class='ticket__detail'>
+                <div>Time</div>
+                <div>null</div>
+              </div>
+
+              <div class='ticket__detail'>
+                <div>Place</div>
+                <div>null</div>
+              </div>
+            </div>
+
+            <div class='ticket__extra'>null</div>
+          </div>
+
+          <div class='back-ticket'>
+            <h2 class='back-ticket__heading'>null,</h2>
+
+            <div class='back-ticket__desc'>
+              <img *ngIf="displayQrCode()" [src]="generated" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+   </div>
+  </div>
+
+</ion-content>

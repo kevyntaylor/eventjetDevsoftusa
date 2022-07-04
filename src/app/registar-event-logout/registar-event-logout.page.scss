@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+ion-content{
+    --background: white;
+  }
+  .contenedor{
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+}
+
+#contenido2{
+    color: black;
+    --background: #cac9c9;
+}
+
+.texto-encima{
+    font-family: 'Roboto', sans-serif;
+    text-align: left;
+    position: absolute;
+    top: 80px;
+    left: 50px;
+    color: black;
+    font-weight: bold;
+}
+.centrado{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
